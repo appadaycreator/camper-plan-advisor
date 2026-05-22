@@ -1,0 +1,8 @@
+{
+  "name": "Camper Plan Advisor",
+  "short_name": "camper-plan-",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1"
+}
