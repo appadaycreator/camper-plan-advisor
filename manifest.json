@@ -4,6 +4,6 @@
   "start_url": "/camper-plan-advisor/",
   "display": "standalone",
   "background_color": "#6366f1",
-  "theme_color": "#6366f1",
+  "theme_color": "#7c3aed",
   "scope": "/camper-plan-advisor/"
 }
