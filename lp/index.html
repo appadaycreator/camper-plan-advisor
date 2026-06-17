@@ -47,7 +47,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;lin
 /* HERO */
 .hero{position:relative;min-height:580px;display:flex;align-items:center;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background-image:url('../assets/photos/photo_01.jpg');background-size:cover;background-position:center;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,40,20,0.72) 0%,rgba(10,40,20,0.45) 60%,rgba(10,40,20,0.3) 100%);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(8,32,15,0.62) 0%,rgba(8,32,15,0.42) 55%,rgba(8,32,15,0.18) 100%);}
 .hero-inner{position:relative;max-width:1100px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:center;}
 .hero-left h1{font-size:clamp(22px,3.5vw,38px);font-weight:800;color:#fff;line-height:1.35;margin-bottom:16px;}
 .hero-left h1 em{color:#fbbf24;font-style:normal;}
@@ -93,12 +93,15 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;lin
 /* STYLES SECTION */
 .styles-bg{background:var(--bg);}
 .style-scroll{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
-.style-card{border-radius:14px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,0.1);cursor:pointer;transition:transform .2s;}
+.style-card{border-radius:14px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,0.1);cursor:pointer;transition:transform .2s;position:relative;}
 .style-card:hover{transform:translateY(-4px);}
-.style-card-img{width:100%;height:160px;object-fit:cover;}
-.style-card-body{padding:14px;background:#fff;}
-.style-card-body h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
-.style-card-body p{font-size:11px;color:#888;}
+.style-card-img{width:100%;height:210px;object-fit:cover;}
+.style-card-tag{position:absolute;top:12px;left:12px;background:rgba(245,158,11,0.93);color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:16px;letter-spacing:.06em;text-transform:uppercase;}
+.style-card-body{padding:16px;background:#fff;}
+.style-card-body h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.style-card-body p{font-size:12px;color:#666;line-height:1.6;}
+.style-card-meta{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+.style-card-badge{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--green-light);color:var(--green-dark);font-weight:600;}
 
 /* RESULT PREVIEW */
 .result-preview{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
@@ -113,7 +116,15 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;lin
 .result-mockup-header h4{font-size:13px;font-weight:700;margin-bottom:4px;}
 .result-mockup-header p{font-size:11px;opacity:0.85;}
 .result-mockup-body{padding:16px 20px;}
-.result-mockup img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+.result-mockup img{width:100%;height:185px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+/* RESULT COMPARE */
+.result-compare{margin-top:28px;padding:20px;background:var(--green-light);border-radius:14px;border:1px solid #c6e8d3;}
+.result-compare h4{font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:14px;}
+.compare-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:12px;}
+.compare-label{width:90px;font-weight:600;color:var(--text);flex-shrink:0;}
+.compare-bar-wrap{flex:1;background:#c6e8d3;border-radius:20px;height:7px;overflow:hidden;}
+.compare-bar{height:7px;border-radius:20px;background:var(--green);}
+.compare-score{width:36px;text-align:right;font-size:11px;font-weight:700;color:var(--green-dark);flex-shrink:0;}
 .result-tag{display:inline-block;background:var(--green-light);color:var(--green);padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:8px;}
 .equip-list{display:flex;flex-direction:column;gap:6px;}
 .equip-item{display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid #f1f5f9;}
@@ -156,9 +167,10 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;lin
 .faq-item.open .faq-a{display:block;}
 
 /* FINAL CTA */
-.final-cta{background:linear-gradient(135deg,#1a2e1a 0%,#2E8B57 100%);padding:80px 20px;text-align:center;position:relative;overflow:hidden;}
-.final-cta-bg{position:absolute;inset:0;background-image:url('../assets/photos/photo_06.jpg');background-size:cover;background-position:center;opacity:0.15;}
-.final-cta-inner{position:relative;max-width:600px;margin:0 auto;}
+.final-cta{background:#0c2214;padding:80px 20px;text-align:center;position:relative;overflow:hidden;}
+.final-cta-bg{position:absolute;inset:0;background-image:url('../assets/photos/photo_06.jpg');background-size:cover;background-position:center;opacity:0.45;}
+.final-cta-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,18,10,0.82) 0%,rgba(10,36,18,0.72) 100%);}
+.final-cta-inner{position:relative;max-width:600px;margin:0 auto;z-index:2;}
 .final-cta h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;margin-bottom:16px;}
 .final-cta p{font-size:14px;color:rgba(255,255,255,0.85);margin-bottom:32px;}
 .final-cta-btn{display:inline-block;background:var(--amber);color:#fff;font-size:20px;font-weight:800;padding:18px 56px;border-radius:14px;text-decoration:none;box-shadow:0 4px 20px rgba(245,158,11,0.5);transition:transform .2s;}
@@ -345,37 +357,47 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
     <div class="style-scroll">
       <div class="style-card">
         <img src="../assets/photos/photo_02.jpg" alt="ソロキャンプ" class="style-card-img">
+        <span class="style-card-tag">SOLO</span>
         <div class="style-card-body">
           <h3>ソロキャンプ</h3>
-          <p>1人で自由に</p>
+          <p>1人で楽しむ究極の自由スタイル。自分のペースで静寂を満喫</p>
+          <div class="style-card-meta"><span class="style-card-badge">👤 1人</span><span class="style-card-badge">コスパ◎</span></div>
         </div>
       </div>
       <div class="style-card">
         <img src="../assets/photos/photo_03.jpg" alt="ファミリーキャンプ" class="style-card-img">
+        <span class="style-card-tag">FAMILY</span>
         <div class="style-card-body">
           <h3>ファミリーキャンプ</h3>
-          <p>家族で思い出作り</p>
+          <p>家族みんなで作る最高の思い出。子どもも大人も大満足</p>
+          <div class="style-card-meta"><span class="style-card-badge">👨‍👩‍👧 2〜6人</span><span class="style-card-badge">初心者◎</span></div>
         </div>
       </div>
       <div class="style-card">
         <img src="../assets/photos/photo_04.jpg" alt="グループキャンプ" class="style-card-img">
+        <span class="style-card-tag">GROUP</span>
         <div class="style-card-body">
           <h3>グループキャンプ</h3>
-          <p>仲間と大人数で</p>
+          <p>仲間と盛り上がる野外パーティー。わいわい賑やかに楽しむ</p>
+          <div class="style-card-meta"><span class="style-card-badge">👥 4〜10人</span><span class="style-card-badge">賑やか</span></div>
         </div>
       </div>
       <div class="style-card">
         <img src="../assets/photos/photo_05.jpg" alt="グランピング" class="style-card-img">
+        <span class="style-card-tag">GLAMP</span>
         <div class="style-card-body">
           <h3>グランピング</h3>
-          <p>贅沢アウトドア</p>
+          <p>設備充実・手ぶらOKの豪華体験。非日常感を最大限に</p>
+          <div class="style-card-meta"><span class="style-card-badge">💎 贅沢</span><span class="style-card-badge">手ぶらOK</span></div>
         </div>
       </div>
       <div class="style-card">
         <img src="../assets/photos/photo_06.jpg" alt="オートキャンプ" class="style-card-img">
+        <span class="style-card-tag">AUTO</span>
         <div class="style-card-body">
           <h3>オートキャンプ</h3>
-          <p>車で気軽に</p>
+          <p>車で気軽に！荷物もたっぷり積める快適キャンプ</p>
+          <div class="style-card-meta"><span class="style-card-badge">🚗 車横付け</span><span class="style-card-badge">快適</span></div>
         </div>
       </div>
     </div>
@@ -397,6 +419,29 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
           <div class="result-item"><span>☀️</span>季節・気象に合わせた装備アドバイス</div>
           <div class="result-item"><span>🗺️</span>キャンプ場レイアウトシミュレーション</div>
           <div class="result-item"><span>📄</span>PDF出力・SNSシェア・印刷対応</div>
+        </div>
+        <div class="result-compare">
+          <h4>📊 あなたへのスタイル適合度</h4>
+          <div class="compare-row">
+            <span class="compare-label">ファミリー</span>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width:88%"></div></div>
+            <span class="compare-score">88点</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">オートキャンプ</span>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width:79%"></div></div>
+            <span class="compare-score">79点</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">ソロ</span>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width:62%"></div></div>
+            <span class="compare-score">62点</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-label">グランピング</span>
+            <div class="compare-bar-wrap"><div class="compare-bar" style="width:55%;background:var(--amber)"></div></div>
+            <span class="compare-score">55点</span>
+          </div>
         </div>
       </div>
       <div class="result-preview-right">
@@ -544,6 +589,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-bg"></div>
+  <div class="final-cta-overlay"></div>
   <div class="final-cta-inner">
     <h2>まずは1分で<br>診断してみよう！</h2>
     <p>登録・インストール不要。今すぐ無料でキャンプスタイルと装備を診断できます。</p>
