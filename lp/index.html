@@ -138,15 +138,18 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;lin
 .btn-share{background:#1DA1F2;color:#fff;}
 
 /* STEPS */
-.steps-bg{background:linear-gradient(135deg,#1f6b42 0%,#2E8B57 100%);}
+.steps-bg{background:linear-gradient(135deg,#0f4d2c 0%,#2E8B57 100%);}
 .steps-bg .section-label{color:#a7f3d0;}
 .steps-bg .section-title{color:#fff;}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-.step-card{text-align:center;color:#fff;}
-.step-num{width:56px;height:56px;border-radius:50%;background:var(--amber);color:#fff;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
-.step-card img{width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:16px;}
-.step-card h3{font-size:16px;font-weight:700;margin-bottom:8px;}
-.step-card p{font-size:13px;opacity:0.85;line-height:1.7;}
+.steps-flow{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.steps-flow::before{content:"";position:absolute;top:30px;left:13%;right:13%;height:3px;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.55) 0 10px,transparent 10px 20px);z-index:0;}
+.step-card{position:relative;z-index:1;text-align:center;color:#fff;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:16px;padding:0 18px 22px;}
+.step-num{width:60px;height:60px;border-radius:50%;background:var(--amber);color:#fff;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:-30px auto 14px;border:4px solid #1f6b42;box-shadow:0 4px 14px rgba(0,0,0,0.25);}
+.step-label{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.14em;color:#a7f3d0;margin-bottom:12px;}
+.step-card img{width:100%;height:128px;object-fit:cover;border-radius:12px;margin-bottom:14px;}
+.step-card h3{font-size:15px;font-weight:700;margin-bottom:8px;}
+.step-card p{font-size:12.5px;opacity:0.88;line-height:1.7;}
+@media(max-width:900px){.steps-flow::before{display:none;}}
 
 /* BEGINNER */
 .beginner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -201,8 +204,28 @@ footer a:hover{color:#fff;}
 .bset-total{font-size:11px;color:#888;text-align:center;line-height:1.5;}
 .bset-total strong{display:block;font-size:24px;font-weight:800;color:var(--text);}
 
+/* COMPARE TABLE */
+.cmp-wrap{overflow-x:auto;border-radius:16px;box-shadow:0 3px 16px rgba(0,0,0,0.07);}
+.cmp-table{width:100%;border-collapse:collapse;background:#fff;min-width:640px;font-size:13px;}
+.cmp-table th,.cmp-table td{padding:14px 16px;text-align:center;border-bottom:1px solid #eef2f0;}
+.cmp-table thead th{background:var(--green);color:#fff;font-weight:700;font-size:13px;}
+.cmp-table thead th:first-child{background:var(--green-dark);}
+.cmp-table tbody th{background:var(--green-light);color:var(--green-dark);font-weight:700;text-align:left;white-space:nowrap;}
+.cmp-table tbody tr:nth-child(even) td{background:#fafdfb;}
+.cmp-table .stars{color:var(--amber);letter-spacing:1px;}
+.cmp-best{display:inline-block;background:#fee2e2;color:#dc2626;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--green-dark);}
+.trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.trust-item{text-align:center;color:#fff;}
+.trust-item .ti-ic{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 12px;}
+.trust-item h4{font-size:13px;font-weight:700;margin-bottom:4px;}
+.trust-item p{font-size:11px;opacity:0.8;line-height:1.6;}
+
 /* RESPONSIVE */
 @media(max-width:900px){
+  .trust-grid{grid-template-columns:repeat(2,1fr);}
   .hero-inner{grid-template-columns:1fr;gap:24px;}
   .hero-card{display:none;}
   .pain-grid,.feat-grid,.beginner-grid{grid-template-columns:1fr 1fr;}
@@ -575,6 +598,44 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   </div>
 </section>
 
+<!-- STYLE COMPARE TABLE -->
+<section class="section" id="compare">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">スタイル比較</div>
+      <h2 class="section-title">キャンプスタイルをひと目で比較</h2>
+      <p class="section-sub" style="margin:0 auto;">費用・手軽さ・快適さを横並びでチェック。診断では、あなたの回答に最も合うスタイルを自動で見つけます。</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>スタイル</th><th>おすすめ人数</th><th>初期費用の目安</th><th>手軽さ</th><th>快適さ</th><th>こんな人に</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>ソロキャンプ</th><td>1人</td><td>約3万円〜</td><td class="stars">★★★★★</td><td class="stars">★★★☆☆</td><td>静かに自分時間を楽しみたい</td>
+          </tr>
+          <tr>
+            <th>ファミリー <span class="cmp-best">人気</span></th><td>2〜6人</td><td>約8万円〜</td><td class="stars">★★★★☆</td><td class="stars">★★★★☆</td><td>子どもと思い出を作りたい</td>
+          </tr>
+          <tr>
+            <th>グループ</th><td>4〜10人</td><td>約10万円〜</td><td class="stars">★★★☆☆</td><td class="stars">★★★★☆</td><td>仲間とわいわい過ごしたい</td>
+          </tr>
+          <tr>
+            <th>グランピング</th><td>2〜6人</td><td>0円（手ぶら）</td><td class="stars">★★★★★</td><td class="stars">★★★★★</td><td>準備なしで贅沢に過ごしたい</td>
+          </tr>
+          <tr>
+            <th>オートキャンプ</th><td>2〜6人</td><td>約6万円〜</td><td class="stars">★★★★☆</td><td class="stars">★★★★☆</td><td>車で気軽に荷物多めで行きたい</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:#94a3b8;margin-top:14px;text-align:center;">※ 費用・評価は一般的なケースをもとにした目安です。診断ではあなたの条件に合わせて詳細に判定します。</p>
+  </div>
+</section>
+
 <!-- STEPS -->
 <section class="section steps-bg" id="steps">
   <div class="section-inner">
@@ -583,27 +644,31 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       <h2 class="section-title" style="color:#fff;">使い方はかんたん！4ステップ</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.8);margin:0 auto;">スマホでも1分で完了。登録・インストール不要で今すぐ使えます。</p>
     </div>
-    <div class="steps-grid">
+    <div class="steps-flow">
       <div class="step-card">
         <div class="step-num">1</div>
+        <span class="step-label">STEP 1</span>
         <img src="../assets/photos/photo_11.jpg" alt="ステップ1：入力">
         <h3>5つの質問に回答</h3>
         <p>人数・予算・季節・スキル・目的を選ぶだけ。約1分で精度の高い診断ができます。</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
+        <span class="step-label">STEP 2</span>
         <img src="../assets/photos/photo_12.jpg" alt="ステップ2：診断">
         <h3>キャンプスタイルを診断</h3>
         <p>入力内容をもとに、あなたに最適なキャンプスタイルをAIが自動で判定します。</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
+        <span class="step-label">STEP 3</span>
         <img src="../assets/photos/photo_13.jpg" alt="ステップ3：装備リスト">
         <h3>装備リスト＆予算を確認</h3>
         <p>必須・推奨・オプション付きの装備リストと予算目安をその場でチェック。</p>
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
+        <span class="step-label">STEP 4</span>
         <img src="../assets/photos/photo_20.jpg" alt="ステップ4：PDF出力・共有">
         <h3>PDF出力・共有して出発！</h3>
         <p>結果をPDF保存・印刷、SNSやQRコードで仲間と共有して準備を進めましょう。</p>
@@ -650,6 +715,43 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       <img src="../assets/photos/photo_18.jpg" alt="キャンプの様子2" style="width:100%;height:120px;object-fit:cover;border-radius:10px;">
       <img src="../assets/photos/photo_19.jpg" alt="キャンプの様子3" style="width:100%;height:120px;object-fit:cover;border-radius:10px;">
       <img src="../assets/photos/photo_20.jpg" alt="キャンプの様子4" style="width:100%;height:120px;object-fit:cover;border-radius:10px;">
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="section trust-strip">
+  <div class="section-inner">
+    <div class="section-head" style="margin-bottom:40px;">
+      <div class="section-label" style="color:#a7f3d0;">安心のポイント</div>
+      <h2 class="section-title" style="color:#fff;">どこでも、すぐに、安心して使える</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="ti-ic">💴</div>
+        <h4>完全無料</h4>
+        <p>すべての機能を<br>0円で利用可能</p>
+      </div>
+      <div class="trust-item">
+        <div class="ti-ic">🔓</div>
+        <h4>登録不要</h4>
+        <p>面倒な会員登録<br>なしで今すぐ</p>
+      </div>
+      <div class="trust-item">
+        <div class="ti-ic">📱</div>
+        <h4>スマホ対応</h4>
+        <p>アプリ不要<br>ブラウザで完結</p>
+      </div>
+      <div class="trust-item">
+        <div class="ti-ic">⚡</div>
+        <h4>たった1分</h4>
+        <p>5つの質問に<br>答えるだけ</p>
+      </div>
+      <div class="trust-item">
+        <div class="ti-ic">📄</div>
+        <h4>PDF・共有</h4>
+        <p>保存・印刷・SNS<br>シェアに対応</p>
+      </div>
     </div>
   </div>
 </section>
