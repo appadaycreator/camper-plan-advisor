@@ -141,7 +141,7 @@ body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:#fff;lin
 .steps-bg{background:linear-gradient(135deg,#1f6b42 0%,#2E8B57 100%);}
 .steps-bg .section-label{color:#a7f3d0;}
 .steps-bg .section-title{color:#fff;}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
 .step-card{text-align:center;color:#fff;}
 .step-num{width:56px;height:56px;border-radius:50%;background:var(--amber);color:#fff;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
 .step-card img{width:100%;height:140px;object-fit:cover;border-radius:12px;margin-bottom:16px;}
@@ -182,6 +182,25 @@ footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
 footer a:hover{color:#fff;}
 .footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
 
+/* BUDGET SETS */
+.budget-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.budget-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,0.08);display:flex;flex-direction:column;}
+.budget-card-head{padding:16px;color:#fff;text-align:center;}
+.budget-card-head .bset-name{font-size:18px;font-weight:800;}
+.budget-card-head .bset-tag{font-size:11px;opacity:0.92;font-weight:600;}
+.bset-3{background:linear-gradient(135deg,#2E8B57,#1f6b42);}
+.bset-6{background:linear-gradient(135deg,#F59E0B,#d97706);}
+.bset-10{background:linear-gradient(135deg,#ea580c,#c2410c);}
+.bset-20{background:linear-gradient(135deg,#7c3aed,#6d28d9);}
+.bset-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.bset-photos img{width:100%;height:64px;object-fit:cover;display:block;}
+.bset-body{padding:16px;flex:1;display:flex;flex-direction:column;}
+.bset-list{list-style:none;margin:0 0 14px;padding:0;flex:1;}
+.bset-list li{font-size:12px;color:var(--text-sub);padding:6px 0;border-bottom:1px dashed #eef2f0;display:flex;gap:6px;align-items:flex-start;line-height:1.5;}
+.bset-list li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;}
+.bset-total{font-size:11px;color:#888;text-align:center;line-height:1.5;}
+.bset-total strong{display:block;font-size:24px;font-weight:800;color:var(--text);}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:24px;}
@@ -189,13 +208,15 @@ footer a:hover{color:#fff;}
   .pain-grid,.feat-grid,.beginner-grid{grid-template-columns:1fr 1fr;}
   .style-scroll{grid-template-columns:repeat(3,1fr);}
   .result-preview{grid-template-columns:1fr;}
-  .steps-grid{grid-template-columns:1fr;}
+  .steps-grid{grid-template-columns:1fr 1fr;}
+  .budget-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:600px){
   .pain-grid,.feat-grid,.beginner-grid{grid-template-columns:1fr;}
   .style-scroll{grid-template-columns:1fr 1fr;}
   .nav-links{display:none;}
   .nav-cta{display:block!important;}
+  .budget-grid{grid-template-columns:1fr;}
 }
 /* AdSense unfilled */
 ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!important;height:0!important}
@@ -226,8 +247,8 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-left">
-      <h1>人数・予算・季節・スキルで<br><em>最適なキャンプスタイル</em>と<br>装備を診断</h1>
-      <p class="hero-sub">行き当たりばったりになりがちなキャンプ計画を、AI診断でしっかりサポート。初心者でも安心の装備リスト・予算プランを自動提案します。</p>
+      <h1><em>5つ</em>の質問で分かる、<br>あなたにぴったりの<br><em>キャンプスタイル診断</em></h1>
+      <p class="hero-sub">人数・予算・季節・スキルに答えるだけ。初心者向けの無料ツールが、最適なキャンプスタイルと必要装備リスト・予算プランを自動提案します。【初心者向け・登録不要】</p>
       <div class="hero-stats">
         <div class="hero-stat"><strong>5万人+</strong><span>利用者数</span></div>
         <div class="hero-stat"><strong>1分</strong><span>で診断完了</span></div>
@@ -237,29 +258,36 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       <a href="/camper-plan-advisor/" class="hero-cta">無料で診断する →</a>
     </div>
     <div class="hero-card">
-      <h3>🔍 キャンプスタイル診断</h3>
+      <h3>🔍 主なキャンプの目的は？</h3>
       <div class="style-opt active">
-        <img src="../assets/photos/photo_07.jpg" alt="ファミリーキャンプ">
+        <img src="../assets/photos/photo_07.jpg" alt="観光">
         <div class="style-opt-info">
-          <strong>ファミリーキャンプ</strong>
-          <span>3〜5人 / オートサイト向け</span>
+          <strong>観光・景観</strong>
+          <span>絶景スポットを巡りたい</span>
         </div>
       </div>
       <div class="style-opt">
-        <img src="../assets/photos/photo_08.jpg" alt="ソロキャンプ">
+        <img src="../assets/photos/photo_08.jpg" alt="アクティビティ">
         <div class="style-opt-info">
-          <strong>ソロキャンプ</strong>
-          <span>1人 / 自由度最高</span>
+          <strong>アクティビティ</strong>
+          <span>川遊び・ハイキングを満喫</span>
         </div>
       </div>
       <div class="style-opt">
-        <img src="../assets/photos/photo_09.jpg" alt="グランピング">
+        <img src="../assets/photos/photo_09.jpg" alt="リラックス">
         <div class="style-opt-info">
-          <strong>グランピング</strong>
-          <span>手ぶらOK / 豪華仕様</span>
+          <strong>リラックス</strong>
+          <span>のんびり自然に癒される</span>
         </div>
       </div>
-      <button class="hero-card-cta" onclick="location.href='/camper-plan-advisor/'">この条件で診断する →</button>
+      <div class="style-opt">
+        <img src="../assets/photos/photo_10.jpg" alt="社交">
+        <div class="style-opt-info">
+          <strong>社交・交流</strong>
+          <span>仲間とわいわい過ごす</span>
+        </div>
+      </div>
+      <button class="hero-card-cta" onclick="location.href='/camper-plan-advisor/'">この目的で診断する →</button>
     </div>
   </div>
 </section>
@@ -481,32 +509,104 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   </div>
 </section>
 
+<!-- BUDGET SETS -->
+<section class="section styles-bg" id="budget-sets">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">予算別プロファイル</div>
+      <h2 class="section-title">予算別おすすめの装備セット（例）</h2>
+      <p class="section-sub" style="margin:0 auto;">3万・6万・10万・20万円ラインで最適な装備セットを事前計算。診断結果に合わせて提案します。</p>
+    </div>
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-card-head bset-3"><div class="bset-name">3万円セット</div><div class="bset-tag">入門・最小構成</div></div>
+        <div class="bset-photos">
+          <img src="../assets/photos/photo_07.jpg" alt="エントリーテント"><img src="../assets/photos/photo_08.jpg" alt="シュラフ"><img src="../assets/photos/photo_09.jpg" alt="マット">
+          <img src="../assets/photos/photo_10.jpg" alt="ランタン"><img src="../assets/photos/photo_11.jpg" alt="チェア"><img src="../assets/photos/photo_12.jpg" alt="クッカー">
+        </div>
+        <div class="bset-body">
+          <ul class="bset-list">
+            <li>エントリードームテント</li><li>シュラフ＋マット</li><li>LEDランタン</li><li>折りたたみチェア</li><li>クッカーセット</li>
+          </ul>
+          <div class="bset-total">合計目安<strong>¥29,800</strong>ソロ・デイキャンプ向け</div>
+        </div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-card-head bset-6"><div class="bset-name">6万円セット</div><div class="bset-tag">標準・快適仕様</div></div>
+        <div class="bset-photos">
+          <img src="../assets/photos/photo_13.jpg" alt="ドームテント"><img src="../assets/photos/photo_14.jpg" alt="寝袋"><img src="../assets/photos/photo_15.jpg" alt="マット">
+          <img src="../assets/photos/photo_16.jpg" alt="ツーバーナー"><img src="../assets/photos/photo_17.jpg" alt="テーブル"><img src="../assets/photos/photo_18.jpg" alt="クーラー">
+        </div>
+        <div class="bset-body">
+          <ul class="bset-list">
+            <li>ドームテント（2〜3人）</li><li>寝袋×2＋インフレーターマット</li><li>ツーバーナー＋クッカー</li><li>テーブル＆チェアセット</li><li>クーラーボックス</li>
+          </ul>
+          <div class="bset-total">合計目安<strong>¥58,000</strong>カップル・少人数向け</div>
+        </div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-card-head bset-10"><div class="bset-name">10万円セット</div><div class="bset-tag">充実・ファミリー</div></div>
+        <div class="bset-photos">
+          <img src="../assets/photos/photo_19.jpg" alt="ファミリーテント"><img src="../assets/photos/photo_20.jpg" alt="タープ"><img src="../assets/photos/photo_21.jpg" alt="焚き火台">
+          <img src="../assets/photos/photo_22.jpg" alt="ランタン"><img src="../assets/photos/photo_07.jpg" alt="コット"><img src="../assets/photos/photo_10.jpg" alt="チェア">
+        </div>
+        <div class="bset-body">
+          <ul class="bset-list">
+            <li>大型ファミリーテント＋タープ</li><li>寝袋×4＋コット</li><li>焚き火台＋ツーバーナー</li><li>大型クーラー＋ランタン複数</li><li>テーブル＆チェア4脚</li>
+          </ul>
+          <div class="bset-total">合計目安<strong>¥98,000</strong>ファミリーオート向け</div>
+        </div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-card-head bset-20"><div class="bset-name">20万円セット</div><div class="bset-tag">本格・こだわり派</div></div>
+        <div class="bset-photos">
+          <img src="../assets/photos/photo_11.jpg" alt="2ルームテント"><img src="../assets/photos/photo_12.jpg" alt="薪ストーブ"><img src="../assets/photos/photo_13.jpg" alt="高機能シュラフ">
+          <img src="../assets/photos/photo_14.jpg" alt="高級チェア"><img src="../assets/photos/photo_15.jpg" alt="フルキッチン"><img src="../assets/photos/photo_16.jpg" alt="ランタン">
+        </div>
+        <div class="bset-body">
+          <ul class="bset-list">
+            <li>2ルーム大型テント＋タープ</li><li>高機能シュラフ×4</li><li>薪ストーブ＋焚き火台</li><li>高級チェア＆ハイテーブル</li><li>フルキッチンシステム</li>
+          </ul>
+          <div class="bset-total">合計目安<strong>¥198,000</strong>グループ・通年向け</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#94a3b8;margin-top:14px;text-align:center;">※ 価格は一般的な市販ギアをもとにした目安です。レンタルと購入の比較診断にも対応しています。</p>
+  </div>
+</section>
+
 <!-- STEPS -->
 <section class="section steps-bg" id="steps">
   <div class="section-inner">
     <div class="section-head">
       <div class="section-label" style="color:#a7f3d0;">使い方</div>
-      <h2 class="section-title" style="color:#fff;">使い方はカンタン！3ステップ</h2>
+      <h2 class="section-title" style="color:#fff;">使い方はかんたん！4ステップ</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.8);margin:0 auto;">スマホでも1分で完了。登録・インストール不要で今すぐ使えます。</p>
     </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
         <img src="../assets/photos/photo_11.jpg" alt="ステップ1：入力">
-        <h3>人数・予算・季節を入力</h3>
-        <p>5つの質問に答えるだけ。スキルレベルや目的も選ぶことで精度の高い診断が可能です。</p>
+        <h3>5つの質問に回答</h3>
+        <p>人数・予算・季節・スキル・目的を選ぶだけ。約1分で精度の高い診断ができます。</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <img src="../assets/photos/photo_12.jpg" alt="ステップ2：AI診断">
-        <h3>AIがあなたに最適なプランを提案</h3>
-        <p>入力内容をもとに最適なキャンプスタイルと必要装備リストを自動生成します。</p>
+        <img src="../assets/photos/photo_12.jpg" alt="ステップ2：診断">
+        <h3>キャンプスタイルを診断</h3>
+        <p>入力内容をもとに、あなたに最適なキャンプスタイルをAIが自動で判定します。</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <img src="../assets/photos/photo_13.jpg" alt="ステップ3：出発">
-        <h3>装備を確認して出発！</h3>
-        <p>PDF保存・印刷してお買い物リストとして活用。チェックしながら準備を進められます。</p>
+        <img src="../assets/photos/photo_13.jpg" alt="ステップ3：装備リスト">
+        <h3>装備リスト＆予算を確認</h3>
+        <p>必須・推奨・オプション付きの装備リストと予算目安をその場でチェック。</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <img src="../assets/photos/photo_20.jpg" alt="ステップ4：PDF出力・共有">
+        <h3>PDF出力・共有して出発！</h3>
+        <p>結果をPDF保存・印刷、SNSやQRコードで仲間と共有して準備を進めましょう。</p>
       </div>
     </div>
   </div>

@@ -250,6 +250,25 @@ footer a:hover{color:#fff;}
 /* ADSENSE */
 ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!important;height:0!important}
 
+/* BUDGET SETS */
+.budget-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.budget-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;flex-direction:column;}
+.budget-card-head{padding:14px 16px;color:#fff;text-align:center;}
+.budget-card-head .bset-name{font-size:16px;font-weight:800;}
+.budget-card-head .bset-tag{font-size:11px;opacity:0.92;font-weight:600;}
+.bset-3{background:linear-gradient(135deg,#2E8B57,#1f6b42);}
+.bset-6{background:linear-gradient(135deg,#F59E0B,#d97706);}
+.bset-10{background:linear-gradient(135deg,#ea580c,#c2410c);}
+.bset-20{background:linear-gradient(135deg,#7c3aed,#6d28d9);}
+.bset-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.bset-photos img{width:100%;height:56px;object-fit:cover;display:block;}
+.bset-body{padding:12px 14px;flex:1;display:flex;flex-direction:column;}
+.bset-list{list-style:none;margin:0 0 12px;padding:0;flex:1;}
+.bset-list li{font-size:11.5px;color:var(--text-sub);padding:5px 0;border-bottom:1px dashed #eef2f0;display:flex;gap:6px;align-items:flex-start;line-height:1.5;}
+.bset-list li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;}
+.bset-total{font-size:11px;color:#888;text-align:center;line-height:1.5;}
+.bset-total strong{display:block;font-size:22px;font-weight:800;color:var(--text);}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .main-layout{grid-template-columns:1fr;}
@@ -257,6 +276,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   .photo-grid-5{grid-template-columns:repeat(3,1fr);}
   .steps-grid,.beginner-grid,.related-grid{grid-template-columns:1fr 1fr;}
   .layout-sim-gallery{grid-template-columns:repeat(2,1fr);}
+  .budget-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:600px){
   .nav-links a:not(.nav-cta){display:none;}
@@ -264,6 +284,7 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
   .photo-grid-3,.steps-grid,.beginner-grid,.related-grid{grid-template-columns:1fr;}
   .result-btns{grid-template-columns:1fr;}
   .score-gauges{grid-template-columns:1fr 1fr 1fr;}
+  .budget-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -510,6 +531,66 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
       </div>
     </div>
   </div>
+</div>
+
+<!-- BUDGET SETS -->
+<div class="full-section" id="budget-sets">
+  <div class="section-title-bar"><h2>予算別おすすめの装備セット（例）</h2></div>
+  <div class="budget-grid">
+    <div class="budget-card">
+      <div class="budget-card-head bset-3"><div class="bset-name">3万円セット</div><div class="bset-tag">入門・最小構成</div></div>
+      <div class="bset-photos">
+        <img src="assets/photos/photo_07.jpg" alt="エントリーテント"><img src="assets/photos/photo_08.jpg" alt="シュラフ"><img src="assets/photos/photo_09.jpg" alt="マット">
+        <img src="assets/photos/photo_10.jpg" alt="ランタン"><img src="assets/photos/photo_11.jpg" alt="チェア"><img src="assets/photos/photo_12.jpg" alt="クッカー">
+      </div>
+      <div class="bset-body">
+        <ul class="bset-list">
+          <li>エントリードームテント</li><li>シュラフ＋マット</li><li>LEDランタン</li><li>折りたたみチェア</li><li>クッカーセット</li>
+        </ul>
+        <div class="bset-total">合計目安<strong>¥29,800</strong>ソロ・デイキャンプ向け</div>
+      </div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-card-head bset-6"><div class="bset-name">6万円セット</div><div class="bset-tag">標準・快適仕様</div></div>
+      <div class="bset-photos">
+        <img src="assets/photos/photo_13.jpg" alt="ドームテント"><img src="assets/photos/photo_14.jpg" alt="寝袋"><img src="assets/photos/photo_15.jpg" alt="マット">
+        <img src="assets/photos/photo_16.jpg" alt="ツーバーナー"><img src="assets/photos/photo_17.jpg" alt="テーブル"><img src="assets/photos/photo_18.jpg" alt="クーラー">
+      </div>
+      <div class="bset-body">
+        <ul class="bset-list">
+          <li>ドームテント（2〜3人）</li><li>寝袋×2＋インフレーターマット</li><li>ツーバーナー＋クッカー</li><li>テーブル＆チェアセット</li><li>クーラーボックス</li>
+        </ul>
+        <div class="bset-total">合計目安<strong>¥58,000</strong>カップル・少人数向け</div>
+      </div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-card-head bset-10"><div class="bset-name">10万円セット</div><div class="bset-tag">充実・ファミリー</div></div>
+      <div class="bset-photos">
+        <img src="assets/photos/photo_19.jpg" alt="ファミリーテント"><img src="assets/photos/photo_20.jpg" alt="タープ"><img src="assets/photos/photo_21.jpg" alt="焚き火台">
+        <img src="assets/photos/photo_22.jpg" alt="ランタン"><img src="assets/photos/photo_07.jpg" alt="コット"><img src="assets/photos/photo_10.jpg" alt="チェア">
+      </div>
+      <div class="bset-body">
+        <ul class="bset-list">
+          <li>大型ファミリーテント＋タープ</li><li>寝袋×4＋コット</li><li>焚き火台＋ツーバーナー</li><li>大型クーラー＋ランタン複数</li><li>テーブル＆チェア4脚</li>
+        </ul>
+        <div class="bset-total">合計目安<strong>¥98,000</strong>ファミリーオート向け</div>
+      </div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-card-head bset-20"><div class="bset-name">20万円セット</div><div class="bset-tag">本格・こだわり派</div></div>
+      <div class="bset-photos">
+        <img src="assets/photos/photo_11.jpg" alt="2ルームテント"><img src="assets/photos/photo_12.jpg" alt="薪ストーブ"><img src="assets/photos/photo_13.jpg" alt="高機能シュラフ">
+        <img src="assets/photos/photo_14.jpg" alt="高級チェア"><img src="assets/photos/photo_15.jpg" alt="フルキッチン"><img src="assets/photos/photo_16.jpg" alt="ランタン">
+      </div>
+      <div class="bset-body">
+        <ul class="bset-list">
+          <li>2ルーム大型テント＋タープ</li><li>高機能シュラフ×4</li><li>薪ストーブ＋焚き火台</li><li>高級チェア＆ハイテーブル</li><li>フルキッチンシステム</li>
+        </ul>
+        <div class="bset-total">合計目安<strong>¥198,000</strong>グループ・通年向け</div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:#94a3b8;margin-top:10px;text-align:center;">※ 価格は一般的な市販ギアをもとにした目安です。診断結果に応じて最適なセットをご提案します。</p>
 </div>
 
 <!-- STYLES TO EXPLORE -->
